@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>XML Parser</title>
+</head>
+<body>
+    <form action="/calculate" method="get">
+        <label for="directory_id">
+            <b>Directory</b>
+        </label>
+        <input id="directory_id" name="directory" th:value="${directory}"/>
+        <br/>
+        <label for="tag_id">
+            <b>Tag</b>
+        </label>
+        <input id="tag_id" name="tag" th:value="${tag}"/>
+        <br/>
+        <input type="submit" value="Run"/>
+    </form>
+    <table>
+        <tr th:each="value : ${valuesList}">
+            <td th:text="${value}">1</td>
+        </tr>
+    </table>
+</body>
+</html>
